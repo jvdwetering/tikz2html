@@ -1,0 +1,14 @@
+% Preamble shared by the pdf (main.tex) and the html
+\usepackage{amsmath,amsthm}
+\usepackage{graphicx}
+\usepackage{tikzit}
+\usepackage{hyperref}
+\input{example.tikzdefs}
+\input{example.tikzstyles}
+
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{exercise}{Exercise}[chapter]
+
+% Solutions are hidden. The html conversion removes them too (skip_environments in html_config.json).
+\usepackage{comment}
+\excludecomment{solution}

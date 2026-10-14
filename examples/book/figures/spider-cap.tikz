@@ -1,0 +1,46 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=white phase dot] (0) at (-10.5, 0.25) {$\alpha$};
+		\node [style=none] (1) at (-9.5, 0.75) {};
+		\node [style=none] (5) at (-9.5, -0.25) {};
+		\node [style=none] (6) at (-11.5, 0.25) {};
+		\node [style=none] (21) at (-7.5, 0) {=};
+		\node [style=none] (22) at (-9.5, -1.25) {};
+		\node [style=none] (23) at (-11.5, -1.25) {};
+		\node [style=white phase dot] (24) at (-4.5, 0) {$\alpha$};
+		\node [style=none] (25) at (-3, 0) {};
+		\node [style=none] (27) at (-6.25, 0.75) {};
+		\node [style=none] (28) at (-5.25, -0.75) {};
+		\node [style=none] (29) at (-6.25, -0.75) {};
+		\node [style=none] (30) at (-5.25, 0.75) {};
+		\node [style=gray dot] (31) at (2.25, 0.5) {};
+		\node [style=none] (32) at (2, -0.5) {};
+		\node [style=none] (33) at (3.25, -0.5) {};
+		\node [style=none] (34) at (3.25, 0.5) {};
+		\node [style=none] (35) at (5, 0) {=};
+		\node [style=none] (37) at (6.25, 0) {};
+		\node [style=gray dot] (38) at (7.5, 0) {};
+		\node [style=none] (39) at (-8.5, 0.75) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [in=180, out=-60] (0) to (5.center);
+		\draw (0)
+			 to [in=180, out=60] (1.center)
+			 to (39.center);
+		\draw (0) to (6.center);
+		\draw [bend left=90, looseness=2.00] (5.center) to (22.center);
+		\draw (23.center) to (22.center);
+		\draw [in=180, out=0, looseness=1.25] (24) to (25.center);
+		\draw (29.center)
+			 to (28.center)
+			 to [in=-105, out=0] (24);
+		\draw (27.center)
+			 to (30.center)
+			 to [in=105, out=0] (24);
+		\draw (31)
+			 to (34.center)
+			 to [bend left=90, looseness=2.00] (33.center)
+			 to (32.center);
+		\draw (38) to (37.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

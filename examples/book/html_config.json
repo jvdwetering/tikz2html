@@ -1,0 +1,42 @@
+{
+	"_comment": "Keys starting with an underscore are ignored. See tikz2html/README.md for all the options.",
+
+	"main_name": "main",
+	"other_tex_files": ["diagrams", "rules"],
+	"html_folder": "html",
+	"svg_subfolder": "svgs",
+	"figure_folder": "figures",
+
+	"_comment_scanning": "Macros that draw TikZ pictures, with their arguments: m = mandatory, o = optional [..], empty = none",
+	"tikz_macros": {
+		"tikzfig": "m",
+		"ctikzfig": "m",
+		"namedeq": "m",
+		"Zscalar": "m",
+		"emptydiag": ""
+	},
+	"tikz_environments": ["tikzpicture"],
+	"skip_environments": ["comment", "solution"],
+	"preprocess_replacements": [
+		["\\\\(?:newpage|clearpage)(?![A-Za-z])", ""]
+	],
+
+	"_comment_svgs": "The svg template, and the files that all svgs depend on (a change in them rebuilds all svgs)",
+	"svg_basefile": "svgbase.tex",
+	"svg_dependencies": ["tikzit.sty", "example.tikzdefs", "example.tikzstyles"],
+	"svg_scale": 1.3,
+
+	"_comment_html": "make4ht options, and the files the html needs",
+	"make4ht_config": "myconfig.cfg",
+	"split_depth": 2,
+	"bibtex": "bibtex",
+	"additional_css": ["example.css"],
+	"extra_js": ["example.js"],
+	"files_to_copy": [
+		"preamble.tex",
+		"tikzit.sty",
+		"example.tikzdefs",
+		"example.tikzstyles",
+		"references.bib"
+	]
+}

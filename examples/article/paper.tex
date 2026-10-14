@@ -1,0 +1,40 @@
+\documentclass[11pt]{article}
+
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{xcolor}
+\usepackage{tikzit}
+\usepackage[backend=biber]{biblatex}
+\addbibresource{references.bib}
+\usepackage{hyperref}
+
+% Colours used in zx.tikzstyles
+\definecolor{zxred}{RGB}{232, 165, 165}
+\definecolor{zxgreen}{RGB}{216, 248, 216}
+\definecolor{zxhad}{RGB}{255, 255, 130}
+\definecolor{zxpaulibox}{RGB}{221, 221, 255}
+\input{zx.tikzstyles}
+
+\newcommand{\scalareq}{\ensuremath{\propto}}  % used in figures/bialgebra-rule.tikz
+
+% A macro drawing a TikZ picture, with an optional argument: a spider of the given colour with a phase.
+% tikz2html --init finds it, and its arguments.
+\newcommand{\spider}[2][Z]{\tikz[baseline=-0.6ex]{\node[style=#1 phase dot] {$#2$};}}
+
+\newtheorem{proposition}{Proposition}
+
+\title{Phase gadgets: a short example paper}
+\author{tikz2html}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+  An example of a paper converted to html with tikz2html: it has figures made with TikZiT and with plain TikZ,
+  in equations, in the text and in figures, and sections in separate files.
+\end{abstract}
+
+\input{sections/introduction}
+\input{sections/results}
+
+\printbibliography
+\end{document}

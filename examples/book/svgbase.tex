@@ -1,0 +1,35 @@
+% Template for the svgs. tikz2html replaces the placeholder of the main file with the path of the .aux file of the
+% html run, and the placeholder of the content with the diagram (wrapped in a preview environment).
+% It is compiled in the folder of html_config.json, so \tikzfig finds ./figures.
+\documentclass{article}
+
+% References get the numbers of the html (from the .aux file written by tex4ht)
+\usepackage{xr}
+\externaldocument{MAIN_FILE}
+
+\usepackage{amsmath}
+\usepackage{hyperref}
+
+% Mark references with raw dvisvgm specials; tikz2html turns these into links to the right html page.
+% This is done at the very end of \begin{document} (the begindocument/end hook): hyperref redefines \ref at the
+% start of the document, which would undo a redefinition made here in the preamble.
+\AddToHook{begindocument/end}{%
+  \let\originaleqref\eqref
+  \renewcommand{\eqref}[1]{\special{dvisvgm:raw <eqref>#1}\originaleqref{#1}\special{dvisvgm:raw </eqref>}}%
+  \let\originalref\ref
+  \renewcommand{\ref}[1]{\special{dvisvgm:raw <ref>#1}\originalref{#1}\special{dvisvgm:raw </ref>}}%
+  \let\originalhyperref\hyperref
+  \renewcommand{\hyperref}[2][]{\special{dvisvgm:raw <hyperref>#1}\originalhyperref[#1]{#2}%
+    \special{dvisvgm:raw </hyperref>}}%
+}
+
+\usepackage{tikzit}
+\input{example.tikzdefs}
+\input{example.tikzstyles}
+
+% Crop every diagram to its contents
+\usepackage[active,tightpage]{preview}
+
+\begin{document}
+CONTENT_HERE
+\end{document}

@@ -1,0 +1,42 @@
+name: tests
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  unit-tests:
+    # The unit tests don't need LaTeX
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        python: ["3.9", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - run: python -m unittest discover tests
+        env:
+          TIKZ2HTML_SKIP_SLOW: "1"
+
+  end-to-end:
+    # Converts the test documents and the examples with TeX Live from Ubuntu
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Install TeX Live
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends texlive-latex-base texlive-latex-recommended \
+            texlive-latex-extra texlive-pictures texlive-fonts-recommended texlive-bibtex-extra \
+            texlive-extra-utils tex4ht dvisvgm biber
+      - run: python -m unittest discover tests -v
+      - name: Install the package and run the command
+        run: |
+          pip install .
+          cd examples/article && tikz2html --list

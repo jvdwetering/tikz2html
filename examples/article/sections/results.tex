@@ -1,0 +1,17 @@
+\section{Phase gadgets}\label{sec:gadgets}
+
+Phase gadgets on the same set of qubits can be fused, which follows from \eqref{eq:fusion} and
+\eqref{eq:bialgebra}:
+\begin{proposition}\label{prop:gadgets}
+  \begin{equation}\label{eq:gadget-fusion}
+    \tikzfig{gadget-fusion}
+  \end{equation}
+\end{proposition}
+Using this, a circuit with several gadgets can be simplified step by step, where the references above the
+equalities are links:
+\begin{align*}
+  \tikzfig{phase-gadget-reduced}
+  &\overset{\eqref{eq:gadget-fusion}}{=} \tikzfig{phase-gadget-reduced} \\
+  &\overset{\text{Prop.~\ref{prop:gadgets}}}{=} \tikzfig{had-had-cancel}
+\end{align*}
+Section~\ref{sec:intro} has more about the spiders $\spider{\gamma}$.

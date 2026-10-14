@@ -1,0 +1,48 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (216) at (0, 0) {$=$};
+		\node [style=none, rotate=90] (228) at (4.5, 0) {...};
+		\node [style=X dot] (231) at (3.5, 0) {};
+		\node [style=Z phase dot] (218) at (2, 0) {$\ \alpha+\beta\ $};
+		\node [style=X dot] (247) at (-3.5, -0.75) {};
+		\node [style=Z phase dot] (248) at (-4.5, -0.75) {$\alpha$};
+		\node [style=X dot] (249) at (-3.5, 0.75) {};
+		\node [style=Z phase dot] (250) at (-4.5, 0.75) {$\beta$};
+		\node [style=none] (253) at (-1.5, 2) {};
+		\node [style=none] (254) at (-1.5, 0.5) {};
+		\node [style=Z dot] (255) at (-2.25, 1.25) {};
+		\node [style=none] (256) at (-1.5, -2) {};
+		\node [style=none] (257) at (-1.5, -0.5) {};
+		\node [style=Z dot] (258) at (-2.25, -1.25) {};
+		\node [style=none, rotate=90] (259) at (-2, 0) {...};
+		\node [style=none, rotate=90] (260) at (-1.5, -1.25) {...};
+		\node [style=none, rotate=90] (261) at (-1.5, 1.25) {...};
+		\node [style=none] (270) at (5.25, 2) {};
+		\node [style=none] (271) at (5.25, 0.5) {};
+		\node [style=Z dot] (272) at (4.5, 1.25) {};
+		\node [style=none] (273) at (5.25, -2) {};
+		\node [style=none] (274) at (5.25, -0.5) {};
+		\node [style=Z dot] (275) at (4.5, -1.25) {};
+		\node [style=none, rotate=90] (276) at (5.25, -1.25) {...};
+		\node [style=none, rotate=90] (277) at (5.25, 1.25) {...};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (231) to (218);
+		\draw (247) to (248);
+		\draw (249) to (250);
+		\draw (253.center) to (255);
+		\draw (255) to (254.center);
+		\draw (256.center) to (258);
+		\draw (258) to (257.center);
+		\draw (258) to (249);
+		\draw (258) to (247);
+		\draw (249) to (255);
+		\draw (247) to (255);
+		\draw (270.center) to (272);
+		\draw (272) to (271.center);
+		\draw (273.center) to (275);
+		\draw (275) to (274.center);
+		\draw (275) to (231);
+		\draw (231) to (272);
+	\end{pgfonlayer}
+\end{tikzpicture}

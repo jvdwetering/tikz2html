@@ -1,0 +1,40 @@
+\chapter{Rules}\label{ch:rules}
+
+\section{Several equations at once}
+
+An \texttt{align} environment with two labels gets two numbers, \eqref{eq:fusion} and \eqref{eq:bialgebra}:
+\begin{align}
+  \label{eq:fusion}
+  \tikzfig{spider-fusion-Z} \\[3mm]
+  \label{eq:bialgebra}
+  \tikzfig{bialgebra-rule}
+\end{align}
+Rows marked with \verb|\nonumber| get no number:
+\begin{gather}
+  \tikzfig{had-had-cancel} \nonumber \\
+  \tikzfig{ket0} \ \scalareq\ \tikzfig{ket0}
+\end{gather}
+
+\section{Tags and references inside figures}
+
+An equation can have a \verb|\tag| instead of a number, like the gadget fusion rule \eqref{eq:gadget-fusion}:
+\begin{equation}\label{eq:gadget-fusion}
+  \tikzfig{gadget-fusion}
+  \tag{gf}
+\end{equation}
+References inside a figure become links in the svg, also to another chapter. The equation numbers in the svg are
+the same as in the html:
+\begin{align*}
+  \tikzfig{ket0}
+  &\namedeq{\eqref{eq:spider-cap}} \tikzfig{ket0} \\
+  &\namedeq{\zxsc} \tikzfig{ket0}
+\end{align*}
+The same figure can be used several times; it is converted only once:
+\ctikzfig{spider-cap}
+
+\begin{theorem}
+  Phase gadgets acting on the same qubits can be combined:
+  \[
+    \tikzfig{phase-gadget-reduced} \qedhere
+  \]
+\end{theorem}

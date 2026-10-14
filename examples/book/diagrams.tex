@@ -1,0 +1,63 @@
+\chapter{ZX-diagrams}\label{ch:diagrams}
+
+% This chapter shows the different ways a TikZ figure can appear in the text.
+% A figure in a comment is ignored: \tikzfig{does-not-exist}
+
+\section{Figures in running text}
+
+The ZX-calculus~\cite{CoeckeDuncan2011} is a graphical language. The state $\ket{0}$ is, up to a scalar, the
+diagram $\tikzfig{ket0}$. That is inline math, which becomes an image on the baseline of the text. So does a
+macro that draws a TikZ picture, like the scalar $\Zscalar{\alpha}$ or the empty diagram \emptydiag, and a
+\texttt{tikzpicture} environment:
+\begin{tikzpicture}[baseline=-0.5ex]\draw[fill=zxgreen] (0,0) circle (1mm);\end{tikzpicture}.
+
+A figure on its own line, with \verb|\ctikzfig|, is centered:
+\ctikzfig{teleport-state}
+
+So is one in a \texttt{center} environment, which can also contain text:
+\begin{center}
+  Spider fusion: \quad \tikzfig{spider-fusion-Z}
+\end{center}
+
+\section{Figures in equations}
+
+A numbered equation, which can be referenced as \eqref{eq:spider-cap}:
+\begin{equation}\label{eq:spider-cap}
+  \tikzfig{spider-cap}
+\end{equation}
+An unnumbered display, which uses a fraction from the text font:
+\[
+  \tikzfig{deformation-example}
+\]
+Equation numbers in the html are the same as in the pdf, also for equations without a label:
+\begin{equation}
+  \tikzfig{ket0} \ = \ \ket{0} + \ket{1}
+\end{equation}
+
+\section{Figures in figures and tables}
+
+Figure~\ref{fig:zx-rules} contains all the rules. The names of the rules in it link back to the figure.
+\begin{figure}[ht]
+  \centering
+  \tikzfig{zx-rules}
+  \caption{The rules of the ZX-calculus. The figure $\tikzfig{ket0}$ in this caption is an image too.}
+  \label{fig:zx-rules}
+\end{figure}
+
+\begin{table}[ht]
+  \centering
+  \begin{tabular}{l|c}
+    Rule & Diagram \\
+    \hline
+    Hadamard cancellation & \tikzfig{had-had-cancel} \\[2mm]
+    Bialgebra & \tikzfig{bialgebra-rule}
+  \end{tabular}
+  \caption{Figures in table cells.}
+\end{table}
+
+\begin{exercise}
+  Show that $\tikzfig{ket0}$ is a state.
+\end{exercise}
+\begin{solution}
+  This solution is hidden, and its figures are not converted: \tikzfig{does-not-exist-either}
+\end{solution}

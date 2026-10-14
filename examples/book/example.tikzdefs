@@ -1,0 +1,41 @@
+% Colours and macros used by the figures. Loaded by both the document (preamble.tex) and the svg template
+% (svgbase.tex), so that the figures look the same in the pdf and in the html.
+
+\usepackage{amsmath,amssymb}
+\usepackage{xcolor}
+\usepackage{xspace}
+\usepackage{bm}
+
+% Colours used in tikzstyles
+\definecolor{zxred}{RGB}{232, 165, 165}
+\definecolor{zxgreen}{RGB}{216, 248, 216}
+\definecolor{zxhad}{RGB}{255, 255, 130}
+\definecolor{zxpaulibox}{RGB}{221, 221, 255}
+
+% A measurement box, used in figures/teleport-state.tikz
+\tikzset{meter/.append style={draw, inner sep=5, rectangle, font=\vphantom{A}, minimum width=20, line width=.4,
+ path picture={\draw[black] ([shift={(.1,.2)}]path picture bounding box.south west) to[bend left=70] ([shift={(-.1,.2)}]path picture bounding box.south east);\draw[black,-latex] ([shift={(0,.1)}]path picture bounding box.south) -- ([shift={(.25,-.05)}]path picture bounding box.north);}}}
+
+\newcommand{\ket}[1]{\ensuremath{|{#1}\rangle}}
+\newcommand{\scalareq}{\ensuremath{\propto}\xspace}
+
+% Names of the rules, linking to the figure with all the rules. They are used inside figures/zx-rules.tikz,
+% so the svg of that figure contains links.
+\newcommand{\zxspider}{\ensuremath{(\hyperref[fig:zx-rules]{\bm{sp}})}\xspace}
+\newcommand{\zxpi}{\ensuremath{(\hyperref[fig:zx-rules]{\bm \pi})}\xspace}
+\newcommand{\zxcolor}{\ensuremath{(\hyperref[fig:zx-rules]{\bm{cc}})}\xspace}
+\newcommand{\zxeuler}{\ensuremath{(\hyperref[fig:zx-rules]{\bm{eu}})}\xspace}
+\newcommand{\zxid}{\ensuremath{(\hyperref[fig:zx-rules]{\bm{id}})}\xspace}
+\newcommand{\zxhh}{\ensuremath{(\hyperref[fig:zx-rules]{\bm{hh}})}\xspace}
+\newcommand{\zxsc}{\ensuremath{(\hyperref[fig:zx-rules]{\bm{sc}})}\xspace}
+
+% Macros drawing TikZ pictures. They are listed under tikz_macros in html_config.json, so that any equation
+% using them becomes an svg.
+\newcommand{\namedeq}[1]{\,\begin{tikzpicture}
+  \begin{pgfonlayer}{nodelayer}
+    \node [style=none] at (0, 0.75) {\footnotesize $#1$};
+    \node [style=none] at (0, 0) {$=$};
+  \end{pgfonlayer}
+\end{tikzpicture}\,}
+\newcommand{\Zscalar}[1]{\,\tikz{\node[style=Z phase dot] (x) {\ensuremath{#1}};}\,}
+\newcommand{\emptydiag}{\,\tikz{\node[draw, dashed, minimum size=4mm] (x) {};}\,}

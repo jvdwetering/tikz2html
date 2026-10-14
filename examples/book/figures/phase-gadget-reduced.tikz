@@ -1,0 +1,43 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (82) at (0.75, 1.5) {};
+		\node [style=none] (83) at (0.75, 0) {};
+		\node [style=none] (84) at (0.75, -1.5) {};
+		\node [style=none] (85) at (10, 1.5) {};
+		\node [style=none] (86) at (10, 0) {};
+		\node [style=none] (87) at (10, -1.5) {};
+		\node [style=Z phase dot] (88) at (3.25, 3.5) {\,$\alpha\!+\!\gamma$\,};
+		\node [style=Z dot] (93) at (1.75, 0) {};
+		\node [style=Z dot] (94) at (1.75, -1.5) {};
+		\node [style=X dot] (95) at (3.25, 2.5) {};
+		\node [style=Z phase dot] (101) at (6.5, 3.5) {$\beta$};
+		\node [style=Z dot] (104) at (5, 1.5) {};
+		\node [style=Z dot] (105) at (5, 0) {};
+		\node [style=X dot] (108) at (6.5, 2.5) {};
+		\node [style=Z phase dot] (124) at (9.5, 3.5) {$\theta$};
+		\node [style=Z dot] (127) at (8.25, 0) {};
+		\node [style=X dot] (132) at (9.5, 2.5) {};
+		\node [style=none] (133) at (4.25, 4) {};
+		\node [style=none] (134) at (4.25, -2.75) {};
+		\node [style=none] (135) at (7.25, 4) {};
+		\node [style=none] (136) at (7.25, -2.75) {};
+		\node [style=none] (139) at (2.5, -2.5) {$U_1'$};
+		\node [style=none] (140) at (5.75, -2.5) {$U_2$};
+		\node [style=none] (142) at (9, -2.5) {$U_4$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (82.center) to (85.center);
+		\draw (83.center) to (86.center);
+		\draw (84.center) to (87.center);
+		\draw (95) to (88);
+		\draw (93) to (95);
+		\draw (94) to (95);
+		\draw (108) to (101);
+		\draw (105) to (108);
+		\draw (104) to (108);
+		\draw (132) to (124);
+		\draw (127) to (132);
+		\draw [style=box edge] (133.center) to (134.center);
+		\draw [style=box edge] (135.center) to (136.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

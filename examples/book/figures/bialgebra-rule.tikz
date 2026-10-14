@@ -1,0 +1,34 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=gray dot] (0) at (-3.5, 0) {};
+		\node [style=none] (1) at (-4.5, 0.75) {};
+		\node [style=none] (2) at (-4.5, -0.75) {};
+		\node [style=white dot] (3) at (-2.25, 0) {};
+		\node [style=none] (4) at (-1.25, 0.75) {};
+		\node [style=none] (5) at (-1.25, -0.75) {};
+		\node [style=none] (6) at (0, 0) {\scalareq};
+		\node [style=none] (8) at (1.25, 0.75) {};
+		\node [style=none] (9) at (1.25, -0.75) {};
+		\node [style=none] (11) at (4.5, 0.75) {};
+		\node [style=none] (12) at (4.5, -0.75) {};
+		\node [style=white dot] (13) at (2.25, 0.75) {};
+		\node [style=white dot] (14) at (2.25, -0.75) {};
+		\node [style=gray dot] (15) at (3.5, 0.75) {};
+		\node [style=gray dot] (16) at (3.5, -0.75) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [in=-105, out=0] (2.center) to (0);
+		\draw [in=0, out=120] (0) to (1.center);
+		\draw (0) to (3);
+		\draw [in=180, out=60] (3) to (4.center);
+		\draw [in=180, out=-60] (3) to (5.center);
+		\draw (9.center) to (14);
+		\draw (8.center) to (13);
+		\draw (13) to (16);
+		\draw (14) to (15);
+		\draw (13) to (15);
+		\draw (14) to (16);
+		\draw (15) to (11.center);
+		\draw (16) to (12.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

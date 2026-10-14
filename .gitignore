@@ -1,3 +1,18 @@
+# Output and LaTeX files of the examples
+examples/*/html/
+examples/*/*.aux
+examples/*/*.log
+examples/*/*.pdf
+examples/*/*.toc
+examples/*/*.out
+examples/*/*.bbl
+examples/*/*.blg
+examples/*/*.bcf
+examples/*/*.run.xml
+examples/*/*.synctex.gz
+
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]

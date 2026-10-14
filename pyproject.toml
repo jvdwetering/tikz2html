@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tikz2html"
+version = "1.0.0"
+description = "Convert LaTeX documents with many TikZ(iT) figures to html, with the figures as linked svg images"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [{name = "John van de Wetering"}]
+keywords = ["latex", "tikz", "tikzit", "html", "svg", "make4ht", "tex4ht"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Text Processing :: Markup :: LaTeX",
+    "Topic :: Text Processing :: Markup :: HTML",
+]
+
+[project.scripts]
+tikz2html = "tikz2html.cli:main"
+
+[tool.setuptools]
+packages = ["tikz2html"]

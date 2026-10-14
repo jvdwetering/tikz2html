@@ -1,0 +1,9 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=gray dot] (15) at (0, 0) {};
+		\node [style=none] (16) at (1.25, 0) {};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (15) to (16.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

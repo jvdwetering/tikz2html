@@ -1,0 +1,39 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (1) at (-2.75, 1.75) {};
+		\node [style=none] (7) at (-2.75, -0.25) {};
+		\node [style=none] (11) at (-3.5, -0.25) {\ket{\Psi}};
+		\node [style=vertex] (13) at (-1.75, 1.75) {};
+		\node [style=vertex set] (15) at (-1.75, 3.25) {\!\!+\!\!};
+		\node [style=none] (16) at (6.5, -0.25) {};
+		\node [style=none] (20) at (-2.75, 3.25) {};
+		\node [style=none] (25) at (-3.5, 1.75) {\ket{\Psi}};
+		\node [meter] (26) at (1.75, 3.25) {};
+		\node [meter] (27) at (1.75, 1.75) {};
+		\node [style=box] (28) at (-0.25, 1.75) {H};
+		\node [style=box] (29) at (3.5, -0.25) {Z};
+		\node [style=box] (30) at (5, -0.25) {X};
+		\node [style=none] (31) at (2.65, 1.75) {};
+		\node [style=none] (32) at (2.65, 3.25) {};
+		\node [style=none] (33) at (3.5, 1.75) {};
+		\node [style=none] (34) at (5, 3.25) {};
+		\node [style=none] (35) at (7.75, 0.75) {};
+		\node [style=none] (36) at (-7, 0.75) {};
+		\node [style=none] (37) at (-6, 2.625) {Alice};
+		\node [style=none] (38) at (-6, -0.25) {Bob};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw (13) to (15);
+		\draw (1.center) to (28);
+		\draw (28) to (27);
+		\draw (20.center) to (26);
+		\draw [style=double edge] (31.center)
+			 to (33.center)
+			 to (29);
+		\draw [style=double edge] (32.center)
+			 to (34.center)
+			 to (30);
+		\draw (7.center) to (16.center);
+		\draw [dashed] (35.center) to (36.center);
+	\end{pgfonlayer}
+\end{tikzpicture}
